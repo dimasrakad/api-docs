@@ -1,0 +1,79 @@
+get:
+  tags:
+    - User
+  summary: Read all users
+  description:
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    firstName:
+                      type: string
+                    lastName:
+                      type: string
+                    phone:
+                      type: string
+                    email:
+                      type: string
+                    __v:
+                      type: integer
+post:
+  tags:
+    - User
+  summary: Create new user
+  description: lorem ipsum
+  parameters:
+    - name: firstName
+      in: header
+      schema:
+        type: string
+      required: true
+    - name: lastName
+      in: header
+      schema:
+        type: string
+      required: true
+    - name: phone
+      in: header
+      schema:
+        type: string
+      required: true
+    - name: email
+      in: header
+      schema:
+        type: string
+      required: true
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  phone:
+                    type: string
+                  email:
+                    type: string
+                  __v:
+                    type: integer

@@ -1,0 +1,101 @@
+get:
+  tags:
+    - User
+  summary: Read user
+  description:
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: User ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  phone:
+                    type: string
+                  email:
+                    type: string
+                  __v:
+                    type: integer
+patch:
+  tags:
+    - User
+  summary: Update user
+  description:
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: User ID
+      schema:
+        type: integer
+    - name: firstName
+      in: header
+      schema:
+        type: string
+    - name: lastName
+      in: header
+      schema:
+        type: string
+    - name: phone
+      in: header
+      schema:
+        type: string
+    - name: email
+      in: header
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  phone:
+                    type: string
+                  email:
+                    type: string
+                  __v:
+                    type: integer
+delete:
+  tags:
+    - User
+  summary: Delete user
+  description:
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: User ID
+      schema:
+        type: integer
+  responses:
+    '204':
+      description: No Content

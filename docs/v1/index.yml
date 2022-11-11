@@ -1,0 +1,176 @@
+openapi: 3.0.3
+info:
+  title: Express API Starter Docs
+  description: |
+    # Introduction
+    This API is documented in **OpenAPI format**, You can find more information :
+
+    - **Specs:** https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#pathsObject
+    - **Basic Structure:** https://swagger.io/docs/specification/basic-structure/
+    - **Tutorial:** https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html
+    
+    # Cross-Origin Resource Sharing
+    This API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+    And that allows cross-domain communication from the browser.
+    All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
+
+    # Authentication
+    Ex-Module offers two forms of authentication:
+      - Local Authentication
+      - Json Web Token
+  contact:
+    name: API Support
+    email: martiendt@gmail.com
+    url: https://github.com/Redocly/redoc
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 0.0.1
+servers:
+  - url: localhost:3000/v1
+    description: Production Server
+paths:
+  /user:
+    $ref: './user/users.yml'
+  /user/{_id}:
+    $ref: './user/users-by-id.yml'
+  # /inventory/transfer-items:
+  #   $ref: './inventory/transfer-items/transfer-items.yml'
+  # /inventory/transfer-items/{id}:
+  #   $ref: './inventory/transfer-items/transfer-items-by-id.yml'
+  # /inventory/transfer-items/export:
+  #   $ref: './inventory/transfer-items/transfer-items-export.yml'
+  # /inventory/receive-items:
+  #   $ref: './inventory/transfer-items/receive-items.yml'
+  # /inventory/receive-items/{id}:
+  #   $ref: './inventory/transfer-items/receive-items-by-id.yml'
+  # /inventory/receive-items/export:
+  #   $ref: './inventory/transfer-items/receive-items-export.yml'
+  # /inventory/usages:
+  #   $ref: ./inventory/inventory-usage/inventory_usages.yaml
+  # /inventory/usages/{id}/histories:
+  #   $ref: ./inventory/inventory-usage/inventory_usages_id_histories.yaml
+  # /inventory/usages/{id}/approve:
+  #   $ref: ./inventory/inventory-usage/inventory_usages_id_approve.yaml
+  # /inventory/usages/{id}/reject:
+  #   $ref: ./inventory/inventory-usage/inventory_usages_id_reject.yaml
+  # /api/v1/finance/cash-advances:
+  #   $ref: './finance/cash-advances/cash-advances.yml'
+  # /api/v1/finance/cash-advances/{id}:
+  #   $ref: './finance/cash-advances/cash-advances-by-id.yml'
+  # /api/v1/finance/cash-advances/{id}/cancellation-approve:
+  #   $ref: './finance/cash-advances/cash-advances-cancellation-approve.yml'
+  # /api/v1/finance/cash-advances/{id}/cancellation-reject:
+  #   $ref: './finance/cash-advances/cash-advances-cancellation-reject.yml'
+  # /api/v1/finance/cash-advances/send-bulk-request-approval:
+  #   $ref: './finance/cash-advances/cash-advances-send-bulk.yml'
+  # /api/v1/approval-with-token/finance/cash-advances:
+  #   $ref: './finance/cash-advances/cash-advances-approve-by-email.yml'
+  # /api/v1/approval-with-token/finance/cash-advances/bulk:
+  #   $ref: './finance/cash-advances/cash-advances-bulk-approve-by-email.yml'
+  # /api/v1/finance/cash-advances/{id}/approve:
+  #   $ref: './finance/cash-advances/cash-advances-approve.yml'
+  # /api/v1/finance/cash-advances/{id}/reject:
+  #   $ref: './finance/cash-advances/cash-advances-reject.yml'
+  # /api/v1/finance/cash-advances/history:
+  #   $ref: './finance/cash-advances/cash-advances-history.yml'
+  # /api/v1/finance/cash-advances/{id}/refund:
+  #   $ref: './finance/cash-advances/cash-advances-refund.yml'
+  # /api/v1/finance/reports:
+  #   $ref: './finance/reports/reports.yml'
+  # /api/v1/finance/reports/set-checklist:
+  #   $ref: './finance/reports/reports-set-checklist.yml'
+  # /sales/delivery-orders:
+  #   $ref: sales/delivery-orders/delivery-orders.yaml
+  # /sales/delivery-orders/export:
+  #   $ref: sales/delivery-orders/delivery-orders_export.yaml
+  # /sales/delivery-orders/approval:
+  #   $ref: sales/delivery-orders/delivery-orders_approval.yaml
+  # /sales/delivery-orders/{id}:
+  #   $ref: sales/delivery-orders/delivery-orders_id.yaml
+  # /sales/delivery-orders/{id}/histories:
+  #   $ref: sales/delivery-orders/delivery-orders_id_histories.yaml
+  # /sales/delivery-orders/{id}/approve:
+  #   $ref: sales/delivery-orders/delivery-orders_id_approve.yaml
+  # /sales/delivery-orders/{id}/reject:
+  #   $ref: sales/delivery-orders/delivery-orders_id_reject.yaml
+  # /sales/delivery-orders/{id}/cancellation-approve:
+  #   $ref: sales/delivery-orders/delivery-orders_id_cancellation-approve.yaml
+  # /sales/delivery-orders/{id}/cancellation-reject:
+  #   $ref: sales/delivery-orders/delivery-orders_id_cancellation-reject.yaml
+  # /sales/delivery-orders/{id}/close:
+  #   $ref: sales/delivery-orders/delivery-orders_id_close.yaml
+  # /sales/delivery-orders/{id}/close-approve:
+  #   $ref: sales/delivery-orders/delivery-orders_id_close-approve.yaml
+  # /sales/delivery-orders/{id}/close-reject:
+  #   $ref: sales/delivery-orders/delivery-orders_id_close-reject.yaml
+  # /sales/delivery-orders/approval/send:
+  #   $ref: sales/delivery-orders/delivery-orders_approval_send.yaml
+  # /sales/delivery-orders/approve:
+  #   $ref: sales/delivery-orders/delivery-orders_approve_by_email.yaml
+  # /sales/delivery-notes:
+  #   $ref: sales/delivery-notes/delivery-notes.yaml
+  # /sales/delivery-notes/{id}:
+  #   $ref: sales/delivery-notes/delivery-notes_id.yaml
+  # /sales/delivery-notes/{id}/approve:
+  #   $ref: sales/delivery-notes/delivery-notes_id_approve.yaml
+  # /sales/delivery-notes/{id}/reject:
+  #   $ref: sales/delivery-notes/delivery-notes_id_reject.yaml
+  # /sales/delivery-notes/{id}/cancellation-approve:
+  #   $ref: sales/delivery-notes/delivery-notes_id_cancellation-approve.yaml
+  # /sales/delivery-notes/{id}/cancellation-reject:
+  #   $ref: sales/delivery-notes/delivery-notes_id_cancellation-reject.yaml
+  # /sales/delivery-notes/{id}/histories:
+  #   $ref: sales/delivery-notes/delivery-notes_id_histories.yaml
+  # /sales/delivery-notes/export:
+  #   $ref: sales/delivery-notes/delivery-notes_export.yaml
+  # /accounting/memo-journals:
+  #   $ref: './accounting/memo-journals/memo-journals.yml'
+  # /accounting/memo-journals/{id}:
+  #   $ref: './accounting/memo-journals/memo-journals-by-id.yml'
+  # /accounting/memo-journals/export:
+  #   $ref: './accounting/memo-journals/memo-journals-export.yml'
+  # /sales/payment-collection:
+  #   $ref: sales/payment-collection/payment-collection.yaml
+  # /sales/payment-collection/export:
+  #   $ref: sales/payment-collection/payment-collection_export.yaml
+  # /sales/approval/payment-collection:
+  #   $ref: sales/payment-collection/payment-collection_approval.yaml
+  # /sales/payment-collection/{id}:
+  #   $ref: sales/payment-collection/payment-collection_id.yaml
+  # /sales/payment-collection/{id}/histories:
+  #   $ref: sales/payment-collection/payment-collection_id_histories.yaml
+  # /sales/payment-collection/{id}/approve:
+  #   $ref: sales/payment-collection/payment-collection_id_approve.yaml
+  # /sales/payment-collection/{id}/reject:
+  #   $ref: sales/payment-collection/payment-collection_id_reject.yaml
+  # /sales/payment-collection/{id}/cancellation-approve:
+  #   $ref: sales/payment-collection/payment-collection_id_cancellation-approve.yaml
+  # /sales/payment-collection/{id}/cancellation-reject:
+  #   $ref: sales/payment-collection/payment-collection_id_cancellation-reject.yaml
+  # /sales/approval/payment-collection/send:
+  #   $ref: sales/payment-collection/payment-collection_approval_send.yaml
+  # /sales/payment-collection/approve:
+  #   $ref: sales/payment-collection/payment-collection_approve_by_email.yaml
+  # /sales/payment-collection/{customerId}/references:
+  #   $ref: sales/payment-collection/payment-collection_references.yaml
+  # /sales/sales-return:
+  #   $ref: sales/sales-return/sales-return.yaml
+  # /sales/sales-return/approval:
+  #   $ref: sales/sales-return/sales-return_approval.yaml
+  # /sales/sales-return/{id}:
+  #   $ref: sales/sales-return/sales-return_id.yaml
+  # /sales/sales-return/{id}/histories:
+  #   $ref: sales/sales-return/sales-return_id_histories.yaml
+  # /sales/sales-return/{id}/approve:
+  #   $ref: sales/sales-return/sales-return_id_approve.yaml
+  # /sales/sales-return/{id}/reject:
+  #   $ref: sales/sales-return/sales-return_id_reject.yaml
+  # /sales/sales-return/{id}/cancellation-approve:
+  #   $ref: sales/sales-return/sales-return_id_cancellation-approve.yaml
+  # /sales/sales-return/{id}/cancellation-reject:
+  #   $ref: sales/sales-return/sales-return_id_cancellation-reject.yaml
+  # /sales/sales-return/approval/send:
+  #   $ref: sales/sales-return/sales-return_approval_send.yaml
+  # /sales/sales-return/approve:
+  #   $ref: sales/sales-return/sales-return_approve_by_email.yaml
